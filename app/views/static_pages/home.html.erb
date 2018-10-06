@@ -1,0 +1,82 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" id="course-tab" data-toggle="tab" href="#course" role="tab">Courses</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab">Instructors</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" id="subject-tab" data-toggle="tab" href="#subject" role="tab">Subjects</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="course" role="tabpanel" aria-labelledby="course-tab">
+  	<table class="table">
+  	
+  	<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Code</th>
+      <th scope="col">Description</th>
+    </tr>
+  	</thead>
+  	
+  	<tbody>
+  	<% @courses.each do |c| %>
+  		<tr>
+    		<td><%= c.name %></td>
+    		<td><%= c.code %></td>
+			<td><%= c.description %></td>
+  		</tr>
+	<% end %>
+	</tbody>
+	
+	</table>
+  </div>
+  
+  <div class="tab-pane fade show active" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
+  	<table class="table">
+  	
+  	<thead>
+    <tr>
+      <th scope="col">Last</th>
+      <th scope="col">First</th>
+      <th scope="col">Email</th>
+    </tr>
+  	</thead>
+  	
+  	<tbody>
+  	<% @instructors.each do |i| %>
+  		<tr>
+    		<td><%= i.last %></td>
+    		<td><%= i.first %></td>
+			<td><%= i.email %></td>
+  		</tr>
+	<% end %>
+	</tbody>
+	
+	</table>
+  </div>
+  
+  <div class="tab-pane fade show active" id="subject" role="tabpanel" aria-labelledby="subject-tab">
+  	<table class="table">
+  	
+  	<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Abbreviation</th>
+    </tr>
+  	</thead>
+  	
+  	<tbody>
+  	<% @subjects.each do |s| %>
+  		<tr>
+    		<td><%= s.name %></td>
+    		<td><%= s.abbreviation %></td>
+  		</tr>
+	<% end %>
+	</tbody>
+	
+	</table>
+  </div>
+</div>
